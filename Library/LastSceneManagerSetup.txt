@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Little Girls Room/Scene/Demo.unity
+- path: Assets/LightTests.unity
   isLoaded: 1
   isActive: 1
