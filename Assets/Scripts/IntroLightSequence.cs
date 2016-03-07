@@ -19,7 +19,7 @@ public class IntroLightSequence : MonoBehaviour {
 	}
 
 	IEnumerator lightsOff() {
-		yield return new WaitForSeconds(15.0f);
+		yield return new WaitForSeconds(5.0f);
 
 		Destroy (musicBox);
 		GetComponent<AudioSource> ().Play ();
