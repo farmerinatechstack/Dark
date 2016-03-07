@@ -73,6 +73,7 @@
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\CardboardiOSDevice.cs" />
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\UnityEditorDevice.cs" />
      <Compile Include="Assets\FlipNormals.cs" />
+     <Compile Include="Assets\LampFlicker.cs" />
      <Compile Include="Assets\Little Girls Room\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Little Girls Room\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
      <Compile Include="Assets\Little Girls Room\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
@@ -156,6 +157,7 @@
      <Compile Include="Assets\Test\LightShafts\LightShafts.Resources.cs" />
      <Compile Include="Assets\Test\LightShafts\LightShafts.Utils.cs" />
      <Compile Include="Assets\Test\LightShafts\LightShafts.cs" />
+     <Compile Include="Assets\ToyMovement.cs" />
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Cardboard\Resources\SkyboxMesh.shader" />
