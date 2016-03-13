@@ -16,7 +16,7 @@ public class LampFlicker : MonoBehaviour {
 	}
 
 	IEnumerator flickLight() {
-		yield return new WaitForSeconds (8f);
+		yield return new WaitForSeconds (TimeEventManager.INTRO_SEQUENCE_LENGTH);
 		GetComponent<AudioSource> ().Play ();
 		for (int i = 0; i < 20; i++) {
 			float flickerInterval = Random.Range (0.0f, 0.2f);

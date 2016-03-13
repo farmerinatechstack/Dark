@@ -6,25 +6,57 @@ public class IntroLightSequence : MonoBehaviour {
 	public Light light1;
 	public Light light2;
 
-	public GameObject musicBox;
+	public AudioClip startSong;
+	public AudioClip transitionClip;
+
+	private AudioSource startSongSrc;
+	private AudioSource transitionSrc;
+
+	AudioSource AddAudio(AudioClip clip, bool loop, bool playAwake, float vol)
+	{
+		AudioSource audioSrc = gameObject.AddComponent <AudioSource>();
+		audioSrc.clip = clip;
+		audioSrc.loop = loop;
+		audioSrc.playOnAwake = playAwake;
+		audioSrc.volume = vol;
+		return audioSrc;
+	}
+
+	void OnEnable() 
+	{
+		TimeEventManager.GameStarted += LightsOut;	
+	}
+
+	void OnDisable()
+	{
+		TimeEventManager.GameStarted -= LightsOut;	
+	}
+
+	void Awake()
+	{
+		startSongSrc = AddAudio (startSong, false, false, 1.0f);
+		transitionSrc = AddAudio (transitionClip, false, false, 1.0f);
+	}
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine (lightsOff ());
+		startSongSrc.Play ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
-	IEnumerator lightsOff() {
-		yield return new WaitForSeconds(5.0f);
+	void LightsOut()
+	{
+		startSongSrc.Stop ();
+		transitionSrc.Play ();
+		StartCoroutine (KillLights ());
+	}
 
-		Destroy (musicBox);
-		GetComponent<AudioSource> ().Play ();
-		Destroy (light.gameObject);
-
+	IEnumerator KillLights() 
+	{
 		yield return new WaitForSeconds (0.4f);
 		Destroy (light1.gameObject);
 
