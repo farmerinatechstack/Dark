@@ -12,16 +12,6 @@ public class IntroLightSequence : MonoBehaviour {
 	private AudioSource startSongSrc;
 	private AudioSource transitionSrc;
 
-	AudioSource AddAudio(AudioClip clip, bool loop, bool playAwake, float vol)
-	{
-		AudioSource audioSrc = gameObject.AddComponent <AudioSource>();
-		audioSrc.clip = clip;
-		audioSrc.loop = loop;
-		audioSrc.playOnAwake = playAwake;
-		audioSrc.volume = vol;
-		return audioSrc;
-	}
-
 	void OnEnable() 
 	{
 		TimeEventManager.GameStarted += LightsOut;	
@@ -34,8 +24,8 @@ public class IntroLightSequence : MonoBehaviour {
 
 	void Awake()
 	{
-		startSongSrc = AddAudio (startSong, false, false, 1.0f);
-		transitionSrc = AddAudio (transitionClip, false, false, 1.0f);
+		startSongSrc = UtilityScript.AddAudio (gameObject, startSong, false, false, 1.0f);
+		transitionSrc = UtilityScript.AddAudio (gameObject, transitionClip, false, false, 1.0f);
 	}
 
 	// Use this for initialization
@@ -57,6 +47,8 @@ public class IntroLightSequence : MonoBehaviour {
 
 	IEnumerator KillLights() 
 	{
+		Destroy (light.gameObject);
+
 		yield return new WaitForSeconds (0.4f);
 		Destroy (light1.gameObject);
 

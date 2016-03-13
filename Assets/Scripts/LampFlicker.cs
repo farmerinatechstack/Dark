@@ -4,8 +4,11 @@ using System.Collections;
 public class LampFlicker : MonoBehaviour {	
 	Light lampLight;
 
+	public static bool CompletedFlicker;
+
 	// Use this for initialization
 	void Start () {
+		CompletedFlicker = false;
 		lampLight = GetComponent<Light> ();
 		StartCoroutine (flickLight ());
 	}
@@ -16,7 +19,7 @@ public class LampFlicker : MonoBehaviour {
 	}
 
 	IEnumerator flickLight() {
-		yield return new WaitForSeconds (TimeEventManager.INTRO_SEQUENCE_LENGTH);
+		yield return new WaitForSeconds (8.0f);
 		GetComponent<AudioSource> ().Play ();
 		for (int i = 0; i < 20; i++) {
 			float flickerInterval = Random.Range (0.0f, 0.2f);
@@ -37,5 +40,6 @@ public class LampFlicker : MonoBehaviour {
 		}
 		lampLight.intensity = 0.0f;
 		GetComponent<AudioSource> ().Stop ();
+		CompletedFlicker = true;
 	}
 }
