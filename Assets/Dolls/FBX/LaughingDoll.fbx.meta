@@ -1,0 +1,445 @@
+fileFormatVersion: 2
+guid: 2bb63da81efc3d34498ca50b776e2962
+timeCreated: 1451180455
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: j_chest
+    100004: j_l_arm_end
+    100006: j_l_shoulder
+    100008: j_neck
+    100010: j_neckEND
+    100012: j_r_arm_end
+    100014: j_r_shoulder
+    100016: j_root
+    100018: LaughingBabyDoll
+    100020: left
+    400000: //RootNode
+    400002: j_chest
+    400004: j_l_arm_end
+    400006: j_l_shoulder
+    400008: j_neck
+    400010: j_neckEND
+    400012: j_r_arm_end
+    400014: j_r_shoulder
+    400016: j_root
+    400018: LaughingBabyDoll
+    400020: left
+    2300000: //RootNode
+    2300002: LaughingBabyDoll
+    3300000: //RootNode
+    3300002: LaughingBabyDoll
+    4300000: LaughingDoll
+    4300002: m_ropa
+    4300004: LaughingBabyDoll
+    7400000: IDLE-Stop -L-
+    7400002: Swinging -L-
+    7400004: IDLE - Breath -L-
+    7400006: 'Head movement #1 -L-'
+    7400008: Arms movement (BEG)
+    7400010: Arms movement -L-
+    7400012: 'Head movement #2 -L-'
+    9500000: //RootNode
+    13700000: LaughingBabyDoll
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: IDLE-Stop -L-
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: j_root
+        weight: 1
+      - path: j_root/j_chest
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder/j_l_arm_end
+        weight: 1
+      - path: j_root/j_chest/j_neck
+        weight: 1
+      - path: j_root/j_chest/j_neck/j_neckEND
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder/j_r_arm_end
+        weight: 1
+      - path: LaughingBabyDoll
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
+    - serializedVersion: 16
+      name: Swinging -L-
+      takeName: Take 001
+      firstFrame: 3
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: j_root
+        weight: 1
+      - path: j_root/j_chest
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder/j_l_arm_end
+        weight: 1
+      - path: j_root/j_chest/j_neck
+        weight: 1
+      - path: j_root/j_chest/j_neck/j_neckEND
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder/j_r_arm_end
+        weight: 1
+      - path: LaughingBabyDoll
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
+    - serializedVersion: 16
+      name: IDLE - Breath -L-
+      takeName: Take 001
+      firstFrame: 28
+      lastFrame: 69
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: j_root
+        weight: 1
+      - path: j_root/j_chest
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder/j_l_arm_end
+        weight: 1
+      - path: j_root/j_chest/j_neck
+        weight: 1
+      - path: j_root/j_chest/j_neck/j_neckEND
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder/j_r_arm_end
+        weight: 1
+      - path: LaughingBabyDoll
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 'Head movement #1 -L-'
+      takeName: Take 001
+      firstFrame: 71
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: j_root
+        weight: 1
+      - path: j_root/j_chest
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder/j_l_arm_end
+        weight: 1
+      - path: j_root/j_chest/j_neck
+        weight: 1
+      - path: j_root/j_chest/j_neck/j_neckEND
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder/j_r_arm_end
+        weight: 1
+      - path: LaughingBabyDoll
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Arms movement (BEG)
+      takeName: Take 001
+      firstFrame: 131
+      lastFrame: 140
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: j_root
+        weight: 1
+      - path: j_root/j_chest
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder/j_l_arm_end
+        weight: 1
+      - path: j_root/j_chest/j_neck
+        weight: 1
+      - path: j_root/j_chest/j_neck/j_neckEND
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder/j_r_arm_end
+        weight: 1
+      - path: LaughingBabyDoll
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Arms movement -L-
+      takeName: Take 001
+      firstFrame: 141
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: j_root
+        weight: 1
+      - path: j_root/j_chest
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder/j_l_arm_end
+        weight: 1
+      - path: j_root/j_chest/j_neck
+        weight: 1
+      - path: j_root/j_chest/j_neck/j_neckEND
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder/j_r_arm_end
+        weight: 1
+      - path: LaughingBabyDoll
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 'Head movement #2 -L-'
+      takeName: Take 001
+      firstFrame: 162
+      lastFrame: 207
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: j_root
+        weight: 1
+      - path: j_root/j_chest
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_l_shoulder/j_l_arm_end
+        weight: 1
+      - path: j_root/j_chest/j_neck
+        weight: 1
+      - path: j_root/j_chest/j_neck/j_neckEND
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder
+        weight: 1
+      - path: j_root/j_chest/j_r_shoulder/j_r_arm_end
+        weight: 1
+      - path: LaughingBabyDoll
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
