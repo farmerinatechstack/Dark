@@ -42,4 +42,12 @@ public class LampFlicker : MonoBehaviour {
 		GetComponent<AudioSource> ().Stop ();
 		CompletedFlicker = true;
 	}
+
+	public void turnOnLight () {
+		lampLight.intensity = 8.0f;
+	}
+
+	public void turnOffLight () {
+		lampLight.intensity = 0.0f;
+	}
 }

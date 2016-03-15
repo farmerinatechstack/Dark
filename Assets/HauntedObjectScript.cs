@@ -4,6 +4,7 @@ using System.Collections;
 public class HauntedObjectScript : MonoBehaviour {
 	public bool canMove;
 	public bool isHaunted;
+	public float y_offset;
 
 	public GameObject[] tiers;
 
@@ -15,6 +16,7 @@ public class HauntedObjectScript : MonoBehaviour {
 	private float tier1Delay;
 	private float tier2Delay;
 	private float tier3Delay;
+	private float killDelay;
 
 	// Use this for initialization
 	void Start () {
@@ -22,9 +24,10 @@ public class HauntedObjectScript : MonoBehaviour {
 		isHaunted = false;
 		currentTier = 0;
 
-		tier1Delay = Random.Range(3.0f, 7.0f);
-		tier2Delay = Random.Range(3.0f, 7.0f);
-		tier3Delay = Random.Range(3.0f, 7.0f);
+		tier1Delay = Random.Range(5.0f, 15.0f);
+		tier2Delay = Random.Range(5.0f, 15.0f);
+		tier3Delay = Random.Range(5.0f, 15.0f);
+		killDelay = Random.Range (3.0f, 5.0f);
 	}
 	
 	// Update is called once per frame
@@ -41,6 +44,8 @@ public class HauntedObjectScript : MonoBehaviour {
 
 	IEnumerator MoveAcrossTiers() {
 		yield return new WaitForSeconds (tier1Delay);
+
+
 		while (!canMove)
 			yield return new WaitForSeconds (0.1f);
 		GameObject tier = tiers [currentTier];
@@ -51,9 +56,11 @@ public class HauntedObjectScript : MonoBehaviour {
 			print ("tierIndex:" + tierIndex);
 			yield return new WaitForSeconds (2.0f);
 		}
-		gameObject.transform.position = tier.transform.GetChild (tierIndex).position;
+	
+		Vector3 new_position =  tier.transform.GetChild (tierIndex).position;
+		new_position.y += y_offset;
+		gameObject.transform.position = new_position;
 		currentTier++;
-
 		yield return new WaitForSeconds (tier2Delay);
 		while (!canMove)
 			yield return new WaitForSeconds (0.1f);
@@ -64,7 +71,9 @@ public class HauntedObjectScript : MonoBehaviour {
 			tierIndex = Random.Range (0, tier.transform.childCount);
 			yield return new WaitForSeconds (2.0f);
 		}
-		gameObject.transform.position = tier.transform.GetChild (tierIndex).transform.position;
+		new_position =  tier.transform.GetChild (tierIndex).position;
+		new_position.y += y_offset;
+		gameObject.transform.position = new_position;
 		currentTier++;
 
 		yield return new WaitForSeconds (tier3Delay);
@@ -77,8 +86,19 @@ public class HauntedObjectScript : MonoBehaviour {
 			tierIndex = Random.Range (0, tier.transform.childCount);
 			yield return new WaitForSeconds (2.0f);
 		}
-		gameObject.transform.position = tier.transform.GetChild (tierIndex).transform.position;
+		new_position =  tier.transform.GetChild (tierIndex).position;
+		new_position.y += y_offset;
+		gameObject.transform.position = new_position;
 		currentTier++;
+		yield return new WaitForSeconds (5.0f);
+
+
+		if (isHaunted) {
+			print (gameObject.name + " is killing...");
+			GetComponent<KillSequenceScript> ().Kill ();
+		}
+
+
 	}
 
 	void MoveToNextTier() {
@@ -88,18 +108,20 @@ public class HauntedObjectScript : MonoBehaviour {
 		while (!child.GetComponent<LocationScript> ().isFree) {
 			tierIndex = Random.Range (0, tier.transform.childCount);
 		}
-		gameObject.transform.position = tier.transform.GetChild (tierIndex).transform.position;
+		Vector3 new_position =  tier.transform.GetChild (tierIndex).position;
+		new_position.y += y_offset;
+		gameObject.transform.position = new_position;
 		currentTier++;
 	}
 
 	void OnTriggerEnter(Collider col) {
-		if (col.gameObject.name == "GazeArea") {
+		if (col.gameObject.name == "GazeBox") {
 			canMove = false;
 		}
 	}
 
 	void OnTriggerExit(Collider col) {
-		if (col.gameObject.name == "GazeArea") {
+		if (col.gameObject.name == "GazeBox") {
 			canMove = true;
 		}
 	}

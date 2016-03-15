@@ -5,6 +5,7 @@ public class IntroLightSequence : MonoBehaviour {
 	public Light light;
 	public Light light1;
 	public Light light2;
+	public Light light3;
 
 	public AudioClip startSong;
 	public AudioClip transitionClip;
@@ -54,5 +55,6 @@ public class IntroLightSequence : MonoBehaviour {
 
 		yield return new WaitForSeconds (0.3f);
 		Destroy (light2.gameObject);
+		Destroy (light3.gameObject);
 	}
 }

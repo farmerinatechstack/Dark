@@ -59,6 +59,17 @@ public class TimeEventManager : MonoBehaviour {
 			hauntedObj.GetComponent<HauntedObjectScript> ().StartHaunt ();
 		}
 
+		// Allow player to try to kill
+		yield return new WaitForSeconds (20.0f);
+		int randIndex = Random.Range (0, hauntedObjects.Length);
+		hauntedObjects[randIndex].GetComponent<KillSequenceScript> ().Kill ();
+//		for (int i = 0; i < hauntedObjects.Length; i++) {
+//			GameObject hauntedObj = hauntedObjects[i];
+//			if (hauntedObj.GetComponent<HauntedObjectScript> ().isHaunted) {
+//				hauntedObj.GetComponent<KillSequenceScript> ().Kill ();
+//				break;
+//			}
+//		}
 		/*
 		int numObjects = hauntedObjects.Length;
 		while (numObjects > 0) {
