@@ -16,7 +16,6 @@ public class KillSequenceScript : MonoBehaviour {
 		}
 		audio.clip = killSound;
 		spotlight.enabled = false;
-		Animator animator = gameObject.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -26,12 +25,12 @@ public class KillSequenceScript : MonoBehaviour {
 
 	// Invoke kill sequence for given haunted object
 	public void Kill() {
-		Animator animator = gameObject.GetComponent<Animator> ();
 		gameObject.transform.position = objectInfo.transform.position;
 		gameObject.transform.rotation = objectInfo.transform.rotation;
 		if (killSound) {
 			audio.Play ();
 		}
+		spotlight.intensity = 8.0f;
 		spotlight.enabled = true;
 	}
 }

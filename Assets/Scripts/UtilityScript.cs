@@ -3,10 +3,12 @@ using System.Collections;
 
 public class UtilityScript : MonoBehaviour {
 	public static int HAUNT_LAYER = 8;
+	private bool canFindSpace;
+
 
 	// Use this for initialization
 	void Start () {
-	
+		canFindSpace = true;
 	}
 	
 	// Update is called once per frame

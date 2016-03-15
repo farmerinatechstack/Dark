@@ -2,14 +2,13 @@
 using System.Collections;
 
 public class LampFlicker : MonoBehaviour {	
-	Light lampLight;
+	public Light lampLight;
 
 	public static bool CompletedFlicker;
 
 	// Use this for initialization
 	void Start () {
 		CompletedFlicker = false;
-		lampLight = GetComponent<Light> ();
 		StartCoroutine (flickLight ());
 	}
 	

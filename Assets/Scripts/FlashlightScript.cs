@@ -50,10 +50,11 @@ public class FlashlightScript : MonoBehaviour {
 				GameObject hitObject = hit.collider.gameObject;
 				if (hit.collider.gameObject.name == "FirstHaunt" && hitObject.GetComponent<FirstHauntScript>().isHaunted) {
 					hitObject.GetComponent<FirstHauntScript> ().KillObject ();
-				} else {
-
+					timeRemaining += 20f;
+				} else if (hitObject.GetComponent<HauntedObjectScript>().isHaunted) {
+					hitObject.GetComponent<HauntedObjectScript> ().KillObject ();
+					timeRemaining += 20f;
 				}
-				timeRemaining += 20f;
 			} else { // Penalty
 				timeRemaining -= 20f;
 			}

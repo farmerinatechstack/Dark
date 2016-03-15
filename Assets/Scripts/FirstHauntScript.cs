@@ -15,6 +15,7 @@ public class FirstHauntScript: MonoBehaviour {
 	public GameObject killEffect;
 
 	public static bool CompletedHaunt;
+	public static bool FirstHauntEnded;
 
 	private AudioSource bassSrc;
 	private AudioSource clickSrc;
@@ -39,6 +40,7 @@ public class FirstHauntScript: MonoBehaviour {
 	void Start () {
 		isHaunted = true;
 		CompletedHaunt = false;
+		FirstHauntEnded = false;
 		HauntLight.intensity = 8.0f;
 		Instruction0.enabled = false;
 		Instruction1.enabled = false;
@@ -88,6 +90,7 @@ public class FirstHauntScript: MonoBehaviour {
 	public void KillObject() {
 		isHaunted = false;
 		StartCoroutine (RunEffect ());
+		FirstHauntEnded = true;
 	}
 
 	private IEnumerator RunEffect() {
