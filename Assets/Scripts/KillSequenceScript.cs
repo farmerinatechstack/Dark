@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class KillSequenceScript : MonoBehaviour {
-
 	public GameObject objectInfo;
 	public AudioClip killSound;
 	public Light spotlight;
@@ -27,5 +26,7 @@ public class KillSequenceScript : MonoBehaviour {
 		}
 		spotlight.intensity = 8.0f;
 		spotlight.enabled = true;
+
+
 	}
 }

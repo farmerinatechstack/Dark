@@ -8,9 +8,12 @@ public class FlashlightScript : MonoBehaviour {
 
 	public bool canRaycast;
 
+	public GameObject stateManager;
+
 	public float duration = 90f;
 	public float timeRemaining;
 
+	public int num_haunts = 4;
 	private static float MAX_LIGHT_INTENSITY = 5.0f;
 
 	void OnEnable() 
@@ -51,9 +54,14 @@ public class FlashlightScript : MonoBehaviour {
 				if (hit.collider.gameObject.name == "FirstHaunt" && hitObject.GetComponent<FirstHauntScript>().isHaunted) {
 					hitObject.GetComponent<FirstHauntScript> ().KillObject ();
 					timeRemaining += 20f;
+					num_haunts--;
 				} else if (hitObject.GetComponent<HauntedObjectScript>().isHaunted) {
 					hitObject.GetComponent<HauntedObjectScript> ().KillObject ();
 					timeRemaining += 20f;
+					num_haunts--;
+				}
+				if (num_haunts == 0) {
+					stateManager.GetComponent<GameStateScript> ().WinGame ();
 				}
 			} else { // Penalty
 				timeRemaining -= 20f;

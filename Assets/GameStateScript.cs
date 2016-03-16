@@ -30,6 +30,7 @@ public class GameStateScript : MonoBehaviour {
 	}
 
 	public void WinGame() {
+		print ("Won Game");
 		gameOver.enabled = true;
 		win.enabled = true;
 
@@ -37,6 +38,7 @@ public class GameStateScript : MonoBehaviour {
 	}
 
 	public void LoseGame() {
+		print ("Lost Game");
 		gameOver.enabled = true;
 		lose.enabled = true;
 
