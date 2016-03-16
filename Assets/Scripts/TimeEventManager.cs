@@ -30,7 +30,7 @@ public class TimeEventManager : MonoBehaviour {
 	
 	}
 
-	IEnumerator RunGame()
+	public IEnumerator RunGame()
 	{
 		yield return new WaitForSeconds (TIME_BEFORE_INTRO);
 		if (GameStarted != null)

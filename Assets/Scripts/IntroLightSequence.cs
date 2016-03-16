@@ -7,10 +7,8 @@ public class IntroLightSequence : MonoBehaviour {
 	public Light light2;
 	public Light light3;
 
-	public AudioClip startSong;
 	public AudioClip transitionClip;
 
-	private AudioSource startSongSrc;
 	private AudioSource transitionSrc;
 
 	void OnEnable() 
@@ -25,13 +23,11 @@ public class IntroLightSequence : MonoBehaviour {
 
 	void Awake()
 	{
-		startSongSrc = UtilityScript.AddAudio (gameObject, startSong, false, false, 1.0f);
 		transitionSrc = UtilityScript.AddAudio (gameObject, transitionClip, false, false, 1.0f);
 	}
 
 	// Use this for initialization
 	void Start () {
-		startSongSrc.Play ();
 	}
 
 	// Update is called once per frame
@@ -41,7 +37,7 @@ public class IntroLightSequence : MonoBehaviour {
 
 	void LightsOut()
 	{
-		startSongSrc.Stop ();
+		GameObject.Find ("GameStates").GetComponent<AudioSource> ().Stop ();
 		transitionSrc.Play ();
 		StartCoroutine (KillLights ());
 	}
