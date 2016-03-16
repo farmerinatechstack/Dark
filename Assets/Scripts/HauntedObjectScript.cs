@@ -5,16 +5,16 @@ public class HauntedObjectScript : MonoBehaviour {
 	public bool canMove;
 	public bool isHaunted;
 	public float y_offset;
+	public AudioClip moveSound;
+
 
 	public GameObject[] tiers;
-
-	public AudioClip warningClip;
-	public AudioClip killClip;
 
 	public GameObject killEffect;
 
 	private int currentTier;
 	private IEnumerator haunt;
+	private AudioSource audio;
 
 	private float tier1Delay;
 	private float tier2Delay;
@@ -31,11 +31,12 @@ public class HauntedObjectScript : MonoBehaviour {
 		tier2Delay = Random.Range(2.0f, 10.0f);
 		tier3Delay = Random.Range(2.0f, 10.0f);
 		killDelay = Random.Range (2.0f, 10.0f);
+
+		audio = UtilityScript.AddAudio (gameObject, moveSound, false, false, 1.0f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
 	public void StartHaunt() {
@@ -45,12 +46,20 @@ public class HauntedObjectScript : MonoBehaviour {
 		StartCoroutine (haunt);
 	}
 
+	IEnumerator MakeNoise() {
+		yield return new WaitForSeconds (Random.Range(5.0f, 20.0f));
+		if (isHaunted) {
+			audio.Play ();
+		}
+	}
+	
 	IEnumerator MoveAcrossTiers() {
 		yield return new WaitForSeconds (tier1Delay);
 		// Start First Move
 		while (!canMove)
 			yield return null;
 		yield return StartCoroutine(MoveToNextTier ());
+		StartCoroutine (MakeNoise ());
 
 		yield return new WaitForSeconds (tier2Delay);
 		// Start Second Move
@@ -120,4 +129,7 @@ public class HauntedObjectScript : MonoBehaviour {
 		Destroy (effect);
 		yield return new WaitForSeconds (1.0f);
 	}
+
 }
+
+

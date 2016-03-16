@@ -10,17 +10,12 @@ public class KillSequenceScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		audio = GetComponent<AudioSource>();
-		if (!audio) {
-			audio = gameObject.AddComponent<AudioSource> ();
-		}
-		audio.clip = killSound;
+		audio = UtilityScript.AddAudio (gameObject, killSound, false, false, 1.0f);
 		spotlight.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
 	// Invoke kill sequence for given haunted object
