@@ -76,6 +76,9 @@
      <Compile Include="Assets\Dolls\Scripts\HauntedLaughingDoll.cs" />
      <Compile Include="Assets\Dolls\Scripts\HauntedMonkeyDoll.cs" />
      <Compile Include="Assets\HauntedObjectScript.cs" />
+     <Compile Include="Assets\Jurassic Pack\-Demo\comp_cs.cs" />
+     <Compile Include="Assets\Jurassic Pack\-Demo\demoworld\MainCam.cs" />
+     <Compile Include="Assets\Jurassic Pack\-Demo\demoworld\Water\Water.cs" />
      <Compile Include="Assets\KillSequenceScript.cs" />
      <Compile Include="Assets\Little Girls Room\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Little Girls Room\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
@@ -178,6 +181,7 @@
      <None Include="Assets\Little Girls Room\Readme.txt" />
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />
+     <None Include="Assets\Jurassic Pack\Readme.txt" />
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
@@ -228,6 +232,7 @@
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
+     <None Include="Assets\Jurassic Pack\-Demo\demoworld\Water\FXWaterPro.shader" />
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
      <None Include="Assets\Little Girls Room\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
