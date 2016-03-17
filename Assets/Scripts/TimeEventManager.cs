@@ -12,6 +12,7 @@ public class TimeEventManager : MonoBehaviour {
 	public static event TimeAction GameStarted;
 	public static event TimeAction IntroDone;
 	public static event TimeAction InstructionsDone;
+	public static event TimeAction FirstHauntEnded;
 
 	public AudioClip ambientClip;
 
@@ -56,6 +57,9 @@ public class TimeEventManager : MonoBehaviour {
 		while (!FirstHauntScript.FirstHauntEnded) {
 			yield return null;
 		}
+
+		if (FirstHauntEnded != null)
+			FirstHauntEnded ();
 
 		for (int i = 0; i < hauntedObjects.Length; i++) {
 			GameObject hauntedObj = hauntedObjects[i];

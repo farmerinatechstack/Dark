@@ -127,6 +127,10 @@ public class HauntedObjectScript : MonoBehaviour {
 		StartCoroutine (RunEffect ());
 	}
 
+	public void EndHaunt() {
+		StopCoroutine (haunt);
+	}
+
 	private IEnumerator RunEffect() {
 		GameObject effect = Instantiate (killEffect, transform.position, killEffect.transform.rotation) as GameObject;
 		yield return new WaitForSeconds (1.0f);

@@ -28,7 +28,7 @@ public class FlashlightScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		canRaycast = false;
+		canRaycast = true;
 		GazeCollider.enabled = false;
 		GazeLight.enabled = false;
 		GazeLight.intensity = MAX_LIGHT_INTENSITY;
@@ -51,15 +51,21 @@ public class FlashlightScript : MonoBehaviour {
 
 			if (Physics.Raycast (camTransform.position, camTransform.forward, out hit) && hit.collider.gameObject.layer == UtilityScript.HAUNT_LAYER) { // Hit Haunt
 				GameObject hitObject = hit.collider.gameObject;
-				if (hit.collider.gameObject.name == "FirstHaunt" && hitObject.GetComponent<FirstHauntScript>().isHaunted) {
+
+
+				if (hit.collider.gameObject.name == "FirstHaunt" && hitObject.GetComponent<FirstHauntScript> ().isHaunted) {
 					hitObject.GetComponent<FirstHauntScript> ().KillObject ();
 					timeRemaining += 20f;
 					num_haunts--;
-				} else if (hitObject.GetComponent<HauntedObjectScript>().isHaunted) {
+				} else if (hitObject.GetComponent<HauntedObjectScript> () != null && hitObject.GetComponent<HauntedObjectScript> ().isHaunted) {
 					hitObject.GetComponent<HauntedObjectScript> ().KillObject ();
 					timeRemaining += 20f;
 					num_haunts--;
+				} else if (hitObject.GetComponent<ClownScript> ().isHaunted) {
+					hitObject.GetComponent<ClownScript> ().KillClown();
 				}
+
+
 				if (num_haunts == 0) {
 					stateManager.GetComponent<GameStateScript> ().WinGame ();
 				}
