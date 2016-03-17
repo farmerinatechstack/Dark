@@ -52,5 +52,7 @@ public class IntroLightSequence : MonoBehaviour {
 		yield return new WaitForSeconds (0.3f);
 		Destroy (light2.gameObject);
 		Destroy (light3.gameObject);
+
+		GameObject.Find ("LampLight").GetComponent<LampFlicker> ().runFlickerSequence ();
 	}
 }

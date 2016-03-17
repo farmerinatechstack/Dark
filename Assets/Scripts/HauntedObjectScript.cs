@@ -7,7 +7,7 @@ public class HauntedObjectScript : MonoBehaviour {
 	public float y_offset;
 	public AudioClip moveSound;
 
-
+	public GameObject stateManager;
 	public GameObject[] tiers;
 
 	public GameObject killEffect;
@@ -78,6 +78,10 @@ public class HauntedObjectScript : MonoBehaviour {
 			print (gameObject.name + " is killing...");
 			GetComponent<KillSequenceScript> ().Kill ();
 		}
+
+		yield return new WaitForSeconds (1.0f);
+		Destroy (gameObject);
+		stateManager.GetComponent<GameStateScript> ().LoseGame ();
 	}
 
 	IEnumerator MoveToNextTier() {
