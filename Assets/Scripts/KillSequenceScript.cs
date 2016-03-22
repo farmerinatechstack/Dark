@@ -26,7 +26,12 @@ public class KillSequenceScript : MonoBehaviour {
 		}
 		spotlight.intensity = 8.0f;
 		spotlight.enabled = true;
+		StartCoroutine (WaitAndDestroy ());
 
+	}
 
+	IEnumerator WaitAndDestroy() {
+		yield return new WaitForSeconds (5.0f);
+		Destroy (gameObject);
 	}
 }

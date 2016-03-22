@@ -128,7 +128,8 @@ public class HauntedObjectScript : MonoBehaviour {
 	}
 
 	public void EndHaunt() {
-		StopCoroutine (haunt);
+		if (haunt != null)
+			StopCoroutine (haunt);
 	}
 
 	private IEnumerator RunEffect() {

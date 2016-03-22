@@ -44,14 +44,13 @@ public class IntroLightSequence : MonoBehaviour {
 
 	IEnumerator KillLights() 
 	{
-		Destroy (light.gameObject);
+		light.enabled = false;
 
 		yield return new WaitForSeconds (0.4f);
-		Destroy (light1.gameObject);
-
+		light1.enabled = false;
 		yield return new WaitForSeconds (0.3f);
-		Destroy (light2.gameObject);
-		Destroy (light3.gameObject);
+		light2.enabled = false;
+		light3.enabled = false;
 
 		GameObject.Find ("LampLight").GetComponent<LampFlicker> ().runFlickerSequence ();
 	}

@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class ClownScript : MonoBehaviour {
-
 	public bool isHaunted;
 	public bool isKilling;
 	private Animator animator;
 	public AudioSource killSound;
 	public AudioClip killClip;
+	public GameObject killEffect;
 
 	// Use this for initialization
 	void Start () {
@@ -20,29 +20,16 @@ public class ClownScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		HandleAnimator ();
-
-		if (Input.GetKeyDown (KeyCode.A)) {
-			isHaunted = false;
-		}
-		if (Input.GetKeyUp (KeyCode.A)) {
-			isHaunted = true;
-		}
-		if (Input.GetKeyDown (KeyCode.K)) {
-			isKilling = true;
-		}
-		if (Input.GetKeyUp (KeyCode.K)) {
-			isKilling = false;
-		}
 	}
 
 	public void KillClown() {
 		isHaunted = false;
+		StartCoroutine (RunEffect ());
 		StartCoroutine (WaitAndDestroy ());
 	}
 
 	IEnumerator WaitAndDestroy() {
 		yield return new WaitForSeconds (2.0f);
-		//Destroy (gameObject);
 	}
 
 	void HandleAnimator () {
@@ -51,27 +38,29 @@ public class ClownScript : MonoBehaviour {
 	}
 
 	public void Kill() {
-		print ("Killed player");
-
-		GameObject clown = GameObject.Find ("ClownKill");
-		gameObject.transform.position = clown.transform.position;
-		gameObject.transform.rotation = clown.transform.rotation;
+		GameObject.Find("KillLocations").GetComponent<ToggleClown>().ToggleClownRenderer();
 		StartCoroutine (KillPlayer ());
-
-		//gameObject.GetComponent<Animator> ().applyRootMotion = false;
 	}
 
 	IEnumerator KillPlayer() {
-		isKilling = true;
 		killSound.Play ();
+		transform.GetChild (1).GetComponent<SkinnedMeshRenderer> ().enabled = false;
 		yield return new WaitForSeconds (1.5f);
+		GameObject.Find ("GameStates").GetComponent<GameStateScript> ().LoseGame ();
 		Destroy (gameObject);
 	}
 
 	void OnTriggerEnter(Collider col) {
-		if (col.gameObject.name == "PlayerZone") {
+		if (col.gameObject.name == "PlayerZone" & isHaunted) {
 			gameObject.GetComponent<BoxCollider> ().enabled = false;
 			Kill ();
 		}
+	}
+
+	private IEnumerator RunEffect() {
+		GameObject effect = Instantiate (killEffect, transform.position, killEffect.transform.rotation) as GameObject;
+		yield return new WaitForSeconds (1.0f);
+		Destroy (effect);
+		yield return new WaitForSeconds (1.0f);
 	}
 }
